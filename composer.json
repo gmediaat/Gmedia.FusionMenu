@@ -1,0 +1,29 @@
+{
+    "name": "gmedia/fusion-menu",
+    "description": "A fusion-afx implementation for menu in Neos.io",
+    "type": "neos-plugin",
+    "version": "1.0.0",
+    "require": {
+        "neos/neos": "^4.2",
+        "neos/fusion-afx": "^1.2"
+    },
+    "license": [
+        "GPL-3.0-or-later"
+    ],
+    "authors": [
+        {
+            "name": "Felix Gradinaru",
+            "email": "felix@g-media.at"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Gmedia\\FusionMenu": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Gmedia.FusionMenu"
+        }
+    }
+}

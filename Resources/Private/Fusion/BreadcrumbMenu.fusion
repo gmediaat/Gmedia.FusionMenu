@@ -1,0 +1,8 @@
+# Neos.Neos:BreadcrumbMenu provides a breadcrumb navigation based on menu items.
+#
+prototype(Gmedia.FusionMenu:BreadcrumbMenu) < prototype(Gmedia.FusionMenu:Menu) {
+	itemCollection = ${q(node).add(q(node).parents('[instanceof Neos.Neos:Document]')).get()}
+	itemCollection.@process.reverse = ${Array.reverse(value)}
+
+	attributes.class = 'breadcrumb'
+}

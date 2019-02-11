@@ -1,0 +1,41 @@
+# Neos.Neos:Menu provides basic menu rendering
+#
+prototype(Gmedia.FusionMenu:Menu) < prototype(Neos.Fusion:Component) {
+	@class = 'Gmedia\\FusionMenu\\Fusion\\MenuImplementation'
+	node = ${node}
+	items = ${this.items}
+
+	entryLevel = ${this.startingPoint ? 0 : 1}
+	maximumLevels = 2
+
+	filter = 'Neos.Neos:Document'
+	attributes = Neos.Fusion:Attributes
+
+	active.attributes = Neos.Fusion:Attributes {
+		class = 'active'
+	}
+	current.attributes = Neos.Fusion:Attributes {
+		class = 'current'
+	}
+	normal.attributes = Neos.Fusion:Attributes {
+		class = 'normal'
+	}
+
+	renderer = Neos.Fusion:Renderer {
+		type = 'Gmedia.FusionMenu:MenuRenderer'
+		element.items = ${props.items}
+
+	}
+
+	@exceptionHandler = 'Neos\\Fusion\\Core\\ExceptionHandlers\\ContextDependentHandler'
+
+	@cache {
+		mode = 'cached'
+		entryIdentifier {
+			documentNode = ${documentNode}
+		}
+		entryTags {
+			1 = ${Neos.Caching.nodeTypeTag('Neos.Neos:Document', documentNode)}
+		}
+	}
+}

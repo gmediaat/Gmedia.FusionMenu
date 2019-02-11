@@ -1,0 +1,5 @@
+prototype(Gmedia.FusionMenu:MenuRenderer) < prototype(Neos.Fusion:Component) {
+	renderer = afx`
+		<Neos.Fusion:Debug>{props.items}</Neos.Fusion:Debug>
+	`
+}
