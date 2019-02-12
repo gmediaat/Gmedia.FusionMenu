@@ -2,7 +2,7 @@
     "name": "gmedia/fusion-menu",
     "description": "A fusion-afx implementation for menu in Neos.io",
     "type": "neos-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "require": {
         "neos/neos": "^4.2",
         "neos/fusion-afx": "^1.2"

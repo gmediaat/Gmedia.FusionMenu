@@ -4,25 +4,15 @@ prototype(Gmedia.FusionMenu:Menu) < prototype(Neos.Fusion:Component) {
 	@class = 'Gmedia\\FusionMenu\\Fusion\\MenuImplementation'
 	node = ${node}
 	items = ${this.items}
+	renderType = 'Gmedia.FusionMenu:MenuRenderer'
 
 	entryLevel = ${this.startingPoint ? 0 : 1}
 	maximumLevels = 2
 
 	filter = 'Neos.Neos:Document'
-	attributes = Neos.Fusion:Attributes
-
-	active.attributes = Neos.Fusion:Attributes {
-		class = 'active'
-	}
-	current.attributes = Neos.Fusion:Attributes {
-		class = 'current'
-	}
-	normal.attributes = Neos.Fusion:Attributes {
-		class = 'normal'
-	}
 
 	renderer = Neos.Fusion:Renderer {
-		type = 'Gmedia.FusionMenu:MenuRenderer'
+		type = ${props.renderType}
 		element.items = ${props.items}
 
 	}
